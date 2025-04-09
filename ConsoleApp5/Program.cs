@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,8 +35,7 @@ public class Book
     public string Publisher { get; set; }
     public int Year { get; set; }
     public int Pages { get; set; }
-
-    // Конструктор с параметрами
+    
     public Book(string author, string title, string publisher, int year, int pages)
     {
         Author = author;
@@ -45,11 +44,9 @@ public class Book
         Year = year;
         Pages = pages;
     }
-
-    // Метод для вывода информации о книге
     public override string ToString()
     {
-        return $"Author: {Author}, Title: {Title}, Publisher: {Publisher}, Year: {Year}, Pages: {Pages}";
+        return $"Автор: {Author}, Название: {Title}, Публикация: {Publisher}, Год: {Year}, Страниц: {Pages}";
     }
 }
 
@@ -95,7 +92,7 @@ class Program
             Console.WriteLine("0. Выход");
             Console.Write("Введите номер операции: ");
             int choice = int.Parse(Console.ReadLine());
-            Console.Clear();
+
             switch (choice)
             {
                 case 1: EnterStudentData(); break;
@@ -247,10 +244,10 @@ class Program
     static void GetStudentsRange()
     {
         Console.Write("Введите начальный индекс диапазона (начиная с 1): ");
-        int start = int.Parse(Console.ReadLine()) - 1;  // Преобразуем в индекс, начиная с 0
+        int start = int.Parse(Console.ReadLine()) - 1;  
 
-        Console.Write("Введите конечный индекс диапазона (начиная с 1): ");
-        int end = int.Parse(Console.ReadLine()) - 1;  // Преобразуем в индекс, начиная с 0
+        Console.Write("Введите конечный индекс диапазона: ");
+        int end = int.Parse(Console.ReadLine()) - 1; 
 
         if (start >= 0 && end < students.Count && start <= end)
         {
@@ -297,7 +294,7 @@ class Program
         int year = int.Parse(Console.ReadLine());
         Console.WriteLine("Введите количество страниц:");
         int pages = int.Parse(Console.ReadLine());
-        Console.Clear();
+
         books.Add(new Book(author, title, publisher, year, pages));
         Console.WriteLine("Книга добавлена.");
     }
